@@ -27,7 +27,7 @@ const TypewriterEffect = () => {
           : fullText.substring(0, text.length + 1)
       );
 
-      setTypingSpeed(isDeleting ? 30 : 60);
+      setTypingSpeed(isDeleting ? 30 : 10);
 
       if (!isDeleting && text === fullText) {
         setTimeout(() => setIsDeleting(true), 1000); // Pause at full text

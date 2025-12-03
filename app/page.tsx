@@ -7,7 +7,7 @@ import TypewriterEffect from './components/TypewriterEffect';
 import RotatingWords from './components/RotatingHeadline';
 import emailjs from '@emailjs/browser';
 import LogoCloud from '@/components/logo-cloud';
-import { Mail, MapPin, MessageCircle, Phone, Play } from 'lucide-react';
+import { ArrowRightIcon, Building2Icon, Mail, MapPin, MessageCircle, Phone, Play, TrendingUpIcon, ZapIcon } from 'lucide-react';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -26,7 +26,19 @@ export default function Home() {
   const [showCoffeeInvite, setShowCoffeeInvite] = useState(false);
   const [showCoffeePreface, setShowCoffeePreface] = useState(false);
   const [coffeeAnim, setCoffeeAnim] = useState(false);
+  const [currentWord, setCurrentWord] = useState(0);
+  const words = [ "generate 10x faster leads",
+    "build high-converting landing pages", 
+    "create premium property websites",
+    "drive qualified buyer traffic",
+    "develop AI-powered CRM systems"];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % words.length);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
   // useEffect(() => {
   //   const timer = setTimeout(() => {
   //     setShowCoffeePreface(true);
@@ -222,159 +234,162 @@ export default function Home() {
   </div>
 </nav>
 
-        {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-15 pb-20 overflow-hidden">
-  {/* Optimized Image Background */}
-  <div className="absolute inset-0 z-0">
-    <Image
-      src="/images/services/pexels-josh-hild-1270765-14321795.jpg"
-      alt="Dubai Real Estate Properties"
-      fill
-      className="object-cover animate-ken-burns"
-      priority
-      quality={85}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-    />
+<section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+  
+  {/* Light, Atmospheric Background */}
+  <div className="absolute inset-0">
+    {/* Subtle light grid */}
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:40px_40px]"></div>
     
-    {/* Dark overlay for better text readability */}
-    <div className="absolute inset-0 bg-black/20 dark:bg-black/30"></div>
+    {/* Gentle floating orbs - green and blue blur */}
+    <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[150px] animate-pulse"></div>
+    <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[180px] animate-pulse" style={{ animationDelay: '2s' }}></div>
     
-    {/* Animated gradient overlays */}
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10 animate-pulse-slow"></div>
-    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-    
-    {/* Moving light effects */}
-    <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute -inset-10 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl animate-float-slow"></div>
-        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-400/15 rounded-full blur-3xl animate-float-slower" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-indigo-400/10 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '6s' }}></div>
-      </div>
-    </div>
+    {/* Subtle gradient overlay from bottom to white for depth */}
+    <div className="absolute inset-0 bg-gradient-to-t from-gray-50/50 to-transparent"></div>
   </div>
-  
-  {/* Enhanced floating elements */}
-  <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-float"></div>
-  <div className="absolute top-40 right-20 w-48 h-48 bg-blue-300/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-  <div className="absolute bottom-40 left-20 w-40 h-40 bg-purple-300/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '4s' }}></div>
-  <div className="absolute bottom-20 right-10 w-36 h-36 bg-indigo-300/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-  
-  {/* Animated grid pattern */}
-  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:20px_20px] animate-grid-fade"></div>
-  
-  <div className="relative max-w-5xl mx-auto text-center w-full z-10 pt-12 md:pt-16 lg:pt-20">
-    <div className="inline-flex items-center gap-2 px-4 py-2 mb-10 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full border border-slate-200/80 dark:border-slate-700/80 shadow-lg hero-animate-1">
-      <span className="relative flex h-2 w-2">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-      </span>
-      <span className="text-1xl font-medium text-slate-700 dark:text-slate-300">#1 Technology & Marketing Company for Real Estate</span>
-    </div>
-    
-    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight hero-animate-1 relative">
-      <div className="relative z-10 text-white drop-shadow-lg min-h-[120px] md:min-h-[100px] flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
-            Let us help you
-          </div>
-          <TypewriterEffect />
-        </div>
-      </div>
-      <br />
-      <div className="text-2xl md:text-3xl relative z-10 mt-4 leading-relaxed">
-    <span className="text-white/70 text-lg md:text-xl font-normal">From </span>
-    <span className="bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent font-bold">Landing Pages</span>
-    <span className="text-white/70 text-lg md:text-xl font-normal"> & </span>
-    <span className="bg-gradient-to-r from-green-300 to-emerald-300 bg-clip-text text-transparent font-bold">Websites</span>
-    <span className="text-white/70 text-lg md:text-xl font-normal"> to </span>
-    <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent font-bold">Lead Generation</span>
-    <span className="text-white/70 text-lg md:text-xl font-normal">, </span>
-    <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-bold">CRM</span>
-    <span className="text-white/70 text-lg md:text-xl font-normal"> & </span>
-    <span className="bg-gradient-to-r from-red-300 to-rose-300 bg-clip-text text-transparent font-bold">AI Automation</span>
-  </div>
-      {/* <div className="text-2xl md:text-3xl relative z-10 mt-4 leading-relaxed">
-        <span className="text-white/70 text-lg md:text-xl font-normal">From </span>
-        <span className="bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent font-bold">Landing Pages</span>
-        <span className="text-white/70 text-lg md:text-xl font-normal"> & </span>
-        <span className="bg-gradient-to-r from-green-300 to-emerald-300 bg-clip-text text-transparent font-bold">Websites</span>
-        <span className="text-white/70 text-lg md:text-xl font-normal"> to </span>
-        <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent font-bold">Lead Generation</span>
-        <span className="text-white/70 text-lg md:text-xl font-normal">, </span>
-        <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-bold">CRM</span>
-        <span className="text-white/70 text-lg md:text-xl font-normal"> & </span>
-        <span className="bg-gradient-to-r from-red-300 to-rose-300 bg-clip-text text-transparent font-bold">AI Automation</span>
-      </div> */}
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+    <div className="text-center">
       
-    </h1>
-    
-    <p className="text-base md:text-lg text-white/95 dark:text-white/90 mb-16 md:mb-20 leading-relaxed max-w-3xl mx-auto hero-animate-2 drop-shadow-lg font-medium">
-      We provide the tools & marketing services to boost your sales and close deals faster.
-    </p>
-    
-    {/* Rest of your content remains the same */}
-    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-10 mb-14">
-      {[
-        "100K+ leads generated",
-        "500M+ in client sales", 
-        "Experts in sales-ready leads"
-      ].map((point, idx) => (
-        <div 
-          key={idx} 
-          className="flex items-center gap-3 group hero-animate-point"
-          style={{ animationDelay: `${500 + idx * 200}ms` }}
-        >
-          <div className="relative">
-            <svg 
-              className="w-6 h-6 text-white/90 flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:text-blue-300 group-hover:rotate-12 drop-shadow-md" 
-              fill="currentColor" 
-              viewBox="0 0 20 20"
-            >
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <span className="text-sm md:text-base font-semibold text-white drop-shadow-md relative transition-all duration-300 group-hover:text-blue-200 group-hover:scale-105">
-            {point}
-            <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-300/80 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </span>
-        </div>
-      ))}
-    </div>
-
-    <div className="flex flex-col sm:flex-row gap-5 justify-center items-center hero-animate-buttons mb-20">
-      <a className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-xl font-semibold text-lg shadow-2xl border-2 border-blue-400/50 inline-flex items-center gap-2 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-blue-500/25 transform-gpu">
-        Request Project Details
-        <svg
-          className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h10v10" />
-        </svg>
-      </a>
-
-      <a href="#services-web" className="px-8 py-4 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm text-slate-900 dark:text-slate-100 rounded-xl font-semibold text-lg border-2 border-white/30 dark:border-slate-600/50 inline-block transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-2xl hover:shadow-white/20 transform-gpu">
-        See our work
-      </a>
-    </div>
-    
-    <div className="flex flex-col items-center gap-2 hero-animate-buttons">
-      <span className="text-sm text-white/90 font-medium drop-shadow-md">Scroll to explore</span>
-      <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2 backdrop-blur-sm">
-        <div className="w-1.5 h-1.5 bg-white rounded-full animate-bounce drop-shadow-md"></div>
+      {/* Trust badge - Green accent */}
+      <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-18 bg-green-100 backdrop-blur-sm rounded-full border border-green-200 shadow-md">
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600"></span>
+        </span>
+        <span className="text-sm font-medium text-green-700 tracking-wider">Trusted by 500+ Real Estate Professionals</span>
       </div>
+
+      {/* Main headline - Text dark, gradient uses Green/Blue */}
+      <h1 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mb-7 text-gray-900">
+      Sell Properties Faster, Smarter, and at Scale
+        <span className="block mt-4 mb-4 bg-gradient-to-r from-green-500 via-blue-500 to-green-500 bg-clip-text text-transparent animate-gradient">
+          <span className="text-4xl md:text-6xl lg:text-3xl font-extrabold">{words[currentWord]}</span>
+        </span>
+      </h1>
+
+      {/* Subheadline - Dark text, prominent Blue accent */}
+      <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto font-light">
+        The complete technology & marketing platform for real estate professionals.
+        <span className="block mt-1 text-blue-600 font-medium">From custom websites to intelligent AI automation.</span>
+      </p>
+
+      {/* Social proof stats - Green and Blue accents */}
+      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mb-12 max-w-5xl mx-auto">
+        {[
+          { number: '100K+', label: 'Leads Generated', icon: TrendingUpIcon, color: 'green' },
+          { number: '$500M+', label: 'In Client Sales', icon: Building2Icon, color: 'blue' },
+          { number: '99%', label: 'Client Satisfaction', icon: ZapIcon, color: 'indigo' } // Retain indigo for the third color pop
+        ].map((stat, idx) => (
+          <div 
+            key={idx}
+            className="flex items-center gap-3 group hover:scale-[1.05] transition-all duration-300 p-2 rounded-lg"
+          >
+            <div className={`${
+              stat.color === 'green' ? 'bg-green-500/10 border-green-500/30' :
+              stat.color === 'blue' ? 'bg-blue-500/10 border-blue-500/30' :
+              'bg-indigo-500/10 border-indigo-500/30'
+            } p-2 rounded-lg border transition-all group-hover:bg-opacity-20`}>
+              <stat.icon className={`w-5 h-5 ${
+                stat.color === 'green' ? 'text-green-600' :
+                stat.color === 'blue' ? 'text-blue-600' :
+                'text-indigo-600'
+              }`} />
+            </div>
+            <div className="text-left">
+              <div className="text-xl md:text-2xl font-bold text-gray-900">{stat.number}</div>
+              <div className="text-xs text-gray-500 font-medium">{stat.label}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="max-w-4xl mx-auto">
+        {/* <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest">OUR COMPLETE SUITE</p> */}
+        <div className="flex flex-wrap justify-center gap-3">
+          {[
+            'Landing Pages',
+            'Custom Websites',
+            'Lead Generation',
+            'CRM Systems',
+            'AI Automation',
+            'Marketing Campaigns',
+            'Social Media',
+            'Project Launch Strategy',
+            'Property Branding',
+            'SEO & Ads'
+            
+          ].map((service, idx) => (
+            <span 
+              key={idx}
+              className="px-3 py-1.5 bg-gray-100 backdrop-blur-sm border border-gray-200 rounded-full text-xs text-gray-600 hover:bg-green-500/10 hover:border-blue-400/50 hover:text-blue-600 transition-all duration-300 cursor-default font-medium"
+            >
+              {service}
+            </span>
+          ))}
+        </div>
+      </div>
+      {/* CTAs - Green and Blue gradients */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-16 mb-16">
+  
+  {/* Primary CTA with form link */}
+  <a 
+    href="#contact" // <-- Add your form URL here
+    // target="_blank"
+    // rel="noopener noreferrer"
+    className="group relative px-9 py-3.5 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-xl font-semibold text-lg shadow-xl shadow-green-300/50 inline-flex items-center gap-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-400/60"
+  >
+    Get Your Free Strategy Call
+    <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  </a>
+
+  {/* Secondary link button */}
+  <a 
+    href="#services-web" // <-- Your portfolio section or another link
+    className="group px-9 py-3.5 bg-white backdrop-blur-sm hover:bg-gray-50 text-gray-800 rounded-xl font-medium text-lg border border-gray-300 inline-flex items-center gap-3 transition-all duration-300 hover:scale-[1.02] hover:border-green-400 shadow-sm"
+  >
+    <Play className="w-4 h-4 text-green-500" />
+    See our work
+  </a>
+
+</div>
+
+
+      {/* Services preview - Green/Blue hover accents */}
+      
+
+      {/* Scroll indicator - dark subtle */}
+      {/* <div className="mt-16 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+        <span className="text-xs text-gray-500 uppercase tracking-wider">Explore Our Work</span>
+        <div className="w-5 h-9 border-2 border-gray-400/50 rounded-full flex items-start justify-center p-1.5">
+          <div className="w-1 h-2 bg-gray-600 rounded-full animate-bounce"></div>
+        </div>
+      </div> */}
     </div>
   </div>
+
+  <style jsx>{`
+    @keyframes gradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradient 3s ease infinite;
+    }
+  `}</style>
 </section>
         {/* <LogoCloud /> */}
 
         {/* Services: Secure Website Development */}
         <section id="services-web" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/20 to-white dark:from-slate-900 dark:to-slate-950">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-center text-3xl md:text-5xl font-semibold text-slate-800 dark:text-slate-100">Landing Pages & Websites</h1>
+          <h1 className="text-center text-3xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
+      <span className="text-emerald-600 dark:text-emerald-400">Website & </span>Landing Pages
+    </h1>
+    <p className="text-center text-md md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto">
+    High-converting websites and landing pages designed to showcase and sell real estate properties effectively.
+    </p>
             <div className="marquee mt-10">
               <div className="marquee-track gap-8 pr-8">
                 {[
@@ -401,10 +416,19 @@ export default function Home() {
 
         
 
+
+        
+
         {/* Services: Result Driven Marketing & Lead Generation */}
         <section id="services-marketing" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50/20 dark:from-slate-950 dark:to-slate-900">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-center text-3xl md:text-5xl font-semibold text-slate-800 dark:text-slate-100">Lead generation for Real estate</h1>
+          <h1 className="text-center text-3xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
+      <span className="text-emerald-600 dark:text-emerald-400">Lead generation</span> for Real estate
+    </h1>
+    <p className="text-center text-md md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto">
+    Generate qualified leads and connect with potential buyers to boost your real estate sales.
+    </p>
+    
             <div className="marquee mt-10">
               <div className="marquee-track gap-8 pr-8">
                 {[
@@ -434,7 +458,12 @@ export default function Home() {
         {/* Services: AI & Automation Showcases */}
         <section id="services-automation" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/20 to-white dark:from-slate-900 dark:to-slate-950">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-center text-3xl md:text-5xl font-semibold text-slate-800 dark:text-slate-100">CRM & Ai agents for Real estate</h1>
+          <h1 className="text-center text-3xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
+      <span className="text-emerald-600 dark:text-emerald-400">CRM &</span> AI agents for Real estate
+    </h1>
+    <p className="text-center text-md md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto">
+    Automate client management and streamline real estate operations with intelligent CRM and AI agents.
+    </p>
             <div className="marquee mt-10">
               <div className="marquee-track gap-8 pr-8">
                 {[
@@ -463,7 +492,12 @@ export default function Home() {
         {/* Services: Mobile App Development */}
         <section id="services-mobile" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/20 to-white dark:from-slate-900 dark:to-slate-950">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-center text-3xl md:text-5xl font-semibold text-slate-800 dark:text-slate-100">Mobile apps for Real estate</h1>
+          <h1 className="text-center text-3xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
+      <span className="text-emerald-600 dark:text-emerald-400">Mobile</span> apps for Real estate
+    </h1>
+    <p className="text-center text-md md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto">
+    Custom mobile apps to showcase properties, engage clients, and simplify real estate transactions.
+    </p>
             <div className="marquee mt-10">
               <div className="marquee-track gap-8 pr-8">
                 {[
