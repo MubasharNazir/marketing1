@@ -263,10 +263,8 @@ export default function Home() {
 
       {/* Main headline - Text dark, gradient uses Green/Blue */}
       <h1 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mb-7 text-gray-900">
-      Sell Properties Faster, Smarter, and at Scale
-        <span className="block mt-4 mb-4 bg-gradient-to-r from-green-500 via-blue-500 to-green-500 bg-clip-text text-transparent animate-gradient">
-          <span className="text-4xl md:text-6xl lg:text-3xl font-extrabold">{words[currentWord]}</span>
-        </span>
+      More leads. Faster sales. That’s our track record.
+      
       </h1>
 
       {/* Subheadline - Dark text, prominent Blue accent */}
@@ -276,7 +274,7 @@ export default function Home() {
       </p>
 
       {/* Social proof stats - Green and Blue accents */}
-      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mb-12 max-w-5xl mx-auto">
+      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mt-30 mb-12 max-w-5xl mx-auto">
         {[
           { number: '100K+', label: 'Leads Generated', icon: TrendingUpIcon, color: 'green' },
           { number: '$500M+', label: 'In Client Sales', icon: Building2Icon, color: 'blue' },
@@ -304,31 +302,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div className="max-w-4xl mx-auto">
-        {/* <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest">OUR COMPLETE SUITE</p> */}
-        <div className="flex flex-wrap justify-center gap-3">
-          {[
-            'Landing Pages',
-            'Custom Websites',
-            'Lead Generation',
-            'CRM Systems',
-            'AI Automation',
-            'Marketing Campaigns',
-            'Social Media',
-            'Project Launch Strategy',
-            'Property Branding',
-            'SEO & Ads'
-            
-          ].map((service, idx) => (
-            <span 
-              key={idx}
-              className="px-3 py-1.5 bg-gray-100 backdrop-blur-sm border border-gray-200 rounded-full text-xs text-gray-600 hover:bg-green-500/10 hover:border-blue-400/50 hover:text-blue-600 transition-all duration-300 cursor-default font-medium"
-            >
-              {service}
-            </span>
-          ))}
-        </div>
-      </div>
+      
       {/* CTAs - Green and Blue gradients */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-16 mb-16">
   
@@ -355,30 +329,14 @@ export default function Home() {
 </div>
 
 
-      {/* Services preview - Green/Blue hover accents */}
-      
-
-      {/* Scroll indicator - dark subtle */}
-      {/* <div className="mt-16 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
-        <span className="text-xs text-gray-500 uppercase tracking-wider">Explore Our Work</span>
-        <div className="w-5 h-9 border-2 border-gray-400/50 rounded-full flex items-start justify-center p-1.5">
-          <div className="w-1 h-2 bg-gray-600 rounded-full animate-bounce"></div>
-        </div>
-      </div> */}
+     
     </div>
   </div>
 
-  <style jsx>{`
-    @keyframes gradient {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-    .animate-gradient {
-      background-size: 200% 200%;
-      animation: gradient 3s ease infinite;
-    }
-  `}</style>
+  
 </section>
+
+
         {/* <LogoCloud /> */}
 
         {/* Services: Secure Website Development */}
