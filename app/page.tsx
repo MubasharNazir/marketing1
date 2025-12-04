@@ -366,7 +366,11 @@ export default function Home() {
                   "/images/services/Cover 1.svg",
                 ].map((src, i) => (
                   <div key={i} className="relative h-40 w-[250px] md:h-80 md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
-                    <Image src={src} alt={`Web Showcase ${i+1}`} fill className="object-cover" />
+                    <img 
+    src={src} 
+    alt={`Marketing Showcase ${i+1}`}
+    className="w-full h-full object-cover"
+  />
                   </div>
                 ))}
               </div>
