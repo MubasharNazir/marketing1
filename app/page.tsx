@@ -253,37 +253,46 @@ export default function Home() {
     <div className="text-center">
       
       {/* Trust badge - Green accent */}
-      <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-18 bg-green-100 backdrop-blur-sm rounded-full border border-green-200 shadow-md">
+      {/* <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-18 bg-green-100 backdrop-blur-sm rounded-full border border-green-200 shadow-md">
         <span className="relative flex h-2.5 w-2.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600"></span>
         </span>
-        <span className="text-sm font-medium text-green-700 tracking-wider">Trusted by 500+ Real Estate Professionals</span>
-      </div>
+        <span className="text-sm font-medium text-green-700 tracking-wider">Trusted by 100+ Real Estate Professionals</span>
+      </div> */}
+      <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-18 bg-green-100 backdrop-blur-sm rounded-full border border-green-200 shadow-md">
+  <span className="relative flex h-2.5 w-2.5">
+    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600"></span>
+  </span>
+  <span className="text-xs sm:text-sm font-medium text-green-700 tracking-wider">
+    Trusted by 100+ Real Estate Professionals
+  </span>
+</div>
 
       {/* Main headline - Text dark, gradient uses Green/Blue */}
       <h1 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mb-7 text-gray-900">
-      More leads. Faster sales. That’s our track record.
+      More leads. Faster sales.
       
       </h1>
 
       {/* Subheadline - Dark text, prominent Blue accent */}
       <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto font-light">
-        The complete technology & marketing platform for real estate professionals.
-        <span className="block mt-1 text-blue-600 font-medium">From custom websites to intelligent AI automation.</span>
+      A fully customised lead generation and nurturing solution for real estate.
+        <span className="block mt-1 text-blue-600 font-medium text-base md:text-lg">From strategy and landing pages to lead generation and closings.</span>
       </p>
 
       {/* Social proof stats - Green and Blue accents */}
-      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mt-30 mb-12 max-w-5xl mx-auto">
-        {[
-          { number: '100K+', label: 'Leads Generated', icon: TrendingUpIcon, color: 'green' },
-          { number: '$500M+', label: 'In Client Sales', icon: Building2Icon, color: 'blue' },
-          { number: '99%', label: 'Client Satisfaction', icon: ZapIcon, color: 'indigo' } // Retain indigo for the third color pop
-        ].map((stat, idx) => (
-          <div 
-            key={idx}
-            className="flex items-center gap-3 group hover:scale-[1.05] transition-all duration-300 p-2 rounded-lg"
-          >
+<div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mt-20 md:mt-30 mb-12 max-w-5xl mx-auto">
+  {[
+    { number: '100K+', label: 'Leads Generated', icon: TrendingUpIcon, color: 'green' },
+    { number: '$500M+', label: 'In Client Sales', icon: Building2Icon, color: 'blue' },
+    { number: '99%', label: 'Client Satisfaction', icon: ZapIcon, color: 'indigo' }
+  ].map((stat, idx) => (
+    <div 
+      key={idx}
+      className="flex items-center gap-3 group hover:scale-[1.05] transition-all duration-300 p-1 md:p-2 rounded-lg"
+    >
             <div className={`${
               stat.color === 'green' ? 'bg-green-500/10 border-green-500/30' :
               stat.color === 'blue' ? 'bg-blue-500/10 border-blue-500/30' :
@@ -303,32 +312,28 @@ export default function Home() {
         ))}
       </div>
       
-      {/* CTAs - Green and Blue gradients */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-16 mb-16">
-  
-  {/* Primary CTA with form link */}
-  <a 
-    href="#contact" // <-- Add your form URL here
-    // target="_blank"
-    // rel="noopener noreferrer"
-    className="group relative px-9 py-3.5 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-xl font-semibold text-lg shadow-xl shadow-green-300/50 inline-flex items-center gap-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-400/60"
-  >
-    Get Your Free Strategy Call
-    <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-  </a>
+     {/* CTAs - Green and Blue gradients */}
+<div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-16 mb-16">
 
-  {/* Secondary link button */}
-  <a 
-    href="#services-web" // <-- Your portfolio section or another link
-    className="group px-9 py-3.5 bg-white backdrop-blur-sm hover:bg-gray-50 text-gray-800 rounded-xl font-medium text-lg border border-gray-300 inline-flex items-center gap-3 transition-all duration-300 hover:scale-[1.02] hover:border-green-400 shadow-sm"
-  >
-    <Play className="w-4 h-4 text-green-500" />
-    See our work
-  </a>
+{/* Primary CTA with form link */}
+<a 
+  href="#contact"
+  className="group relative w-full sm:w-auto text-center px-6 py-3.5 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-xl font-semibold text-base sm:text-lg shadow-xl shadow-green-300/50 inline-flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-400/60"
+>
+  Get Your Free Strategy Call
+  <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+</a>
+
+{/* Secondary link button */}
+<a 
+  href="#services-web"
+  className="group w-full sm:w-auto text-center px-6 py-3.5 bg-white backdrop-blur-sm hover:bg-gray-50 text-gray-800 rounded-xl font-medium text-base sm:text-lg border border-gray-300 inline-flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] hover:border-green-400 shadow-sm"
+>
+  <Play className="w-4 h-4 text-green-500" />
+  See our work
+</a>
 
 </div>
-
-
      
     </div>
   </div>
@@ -342,10 +347,10 @@ export default function Home() {
         {/* Services: Secure Website Development */}
         <section id="services-web" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/20 to-white dark:from-slate-900 dark:to-slate-950">
           <div className="max-w-7xl mx-auto">
-          <h1 className="text-center text-3xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
+          <h1 className="text-center text-2xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
       <span className="text-emerald-600 dark:text-emerald-400">Website & </span>Landing Pages
     </h1>
-    <p className="text-center text-md md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto">
+    <p className="text-center text-sm md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto hidden md:block">
     High-converting websites and landing pages designed to showcase and sell real estate properties effectively.
     </p>
             <div className="marquee mt-10">
@@ -360,7 +365,7 @@ export default function Home() {
                   "/images/services/4.svg",
                   "/images/services/Cover 1.svg",
                 ].map((src, i) => (
-                  <div key={i} className="relative h-64 sm:h-72 md:h-80 w-[360px] sm:w-[440px] md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
+                  <div key={i} className="relative h-40 w-[250px] md:h-80 md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
                     <Image src={src} alt={`Web Showcase ${i+1}`} fill className="object-cover" />
                   </div>
                 ))}
@@ -380,10 +385,10 @@ export default function Home() {
         {/* Services: Result Driven Marketing & Lead Generation */}
         <section id="services-marketing" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50/20 dark:from-slate-950 dark:to-slate-900">
           <div className="max-w-7xl mx-auto">
-          <h1 className="text-center text-3xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
+          <h1 className="text-center text-2xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
       <span className="text-emerald-600 dark:text-emerald-400">Lead generation</span> for Real estate
     </h1>
-    <p className="text-center text-md md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto">
+    <p className="text-center text-sm md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto hidden md:block">
     Generate qualified leads and connect with potential buyers to boost your real estate sales.
     </p>
     
@@ -404,7 +409,7 @@ export default function Home() {
                   
                   "/images/services/c4.svg",
                 ].map((src, i) => (
-                  <div key={i} className="relative h-64 sm:h-72 md:h-80 w-[360px] sm:w-[440px] md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
+                  <div key={i} className="relative h-40 w-[250px] md:h-80 md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
                     <Image src={src} alt={`Marketing Showcase ${i+1}`} fill className="object-cover" />
                   </div>
                 ))}
@@ -416,10 +421,10 @@ export default function Home() {
         {/* Services: AI & Automation Showcases */}
         <section id="services-automation" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/20 to-white dark:from-slate-900 dark:to-slate-950">
           <div className="max-w-7xl mx-auto">
-          <h1 className="text-center text-3xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
+          <h1 className="text-center text-2xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
       <span className="text-emerald-600 dark:text-emerald-400">CRM &</span> AI agents for Real estate
     </h1>
-    <p className="text-center text-md md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto">
+    <p className="text-center text-sm md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto hidden md:block">
     Automate client management and streamline real estate operations with intelligent CRM and AI agents.
     </p>
             <div className="marquee mt-10">
@@ -438,7 +443,7 @@ export default function Home() {
                   "/images/services/e3.svg",
                 
                 ].map((src, i) => (
-                  <div key={i} className="relative h-64 sm:h-72 md:h-80 w-[360px] sm:w-[440px] md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
+                  <div key={i} className="relative h-40 w-[250px] md:h-80 md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
                     <Image src={src} alt={`Automation Showcase ${i+1}`} fill className="object-cover" />
                   </div>
                 ))}
@@ -450,10 +455,10 @@ export default function Home() {
         {/* Services: Mobile App Development */}
         <section id="services-mobile" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/20 to-white dark:from-slate-900 dark:to-slate-950">
           <div className="max-w-7xl mx-auto">
-          <h1 className="text-center text-3xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
+          <h1 className="text-center text-2xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
       <span className="text-emerald-600 dark:text-emerald-400">Mobile</span> apps for Real estate
     </h1>
-    <p className="text-center text-md md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto">
+    <p className="text-center text-sm md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto hidden md:block">
     Custom mobile apps to showcase properties, engage clients, and simplify real estate transactions.
     </p>
             <div className="marquee mt-10">
@@ -476,7 +481,7 @@ export default function Home() {
                   // "/images/services/image 20.svg",
 
                 ].map((src, i) => (
-                  <div key={i} className="relative h-64 sm:h-72 md:h-80 w-[360px] sm:w-[440px] md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
+                  <div key={i} className="relative h-40 w-[250px] md:h-80 md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
                     <Image src={src} alt={`Web Showcase ${i+1}`} fill className="object-cover" />
                   </div>
                 ))}
@@ -511,15 +516,15 @@ export default function Home() {
         },
         {
           quote: "The lead flow is now predictable and high-quality. We're spending less on advertising and closing more deals due to their precise targeting and follow-up system integration.",
-          name: "Omar Al-Fahim",
-          role: "Real Estate Broker, Vista Properties",
-          location: "Riyadh",
+          name: "Qasim Saeed",
+          role: "CEO, Impala Real estate",
+          location: "Abu Dhabi",
         },
         {
           quote: "They completely revamped our digital presence. The new landing pages convert prospects at double the previous rate. Best investment in lead generation this year.",
-          name: "Victor Rossi",
-          role: "CEO, Luxury Homes LLC",
-          location: "London",
+          name: "Muhammad Ayaz",
+          role: "Sales Manager, Aja Properties",
+          location: "Dubai",
         },
       ].map((testimonial, idx) => (
         <div key={idx} className="flex-1 bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 px-8 py-10 flex flex-col items-center text-center transition-transform hover:-translate-y-2 hover:shadow-2xl">
@@ -567,13 +572,13 @@ export default function Home() {
 
         <div className="p-8 md:p-10 lg:p-12">
           <p className="text-xs uppercase tracking-widest text-blue-600 dark:text-blue-400 font-semibold mb-2">
-            Real Estate Growth Strategy
+          Real Estate Growth Strategy
           </p>
           <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4 leading-snug">
-            Book a Free Consultation with Mudassar
+          Book a Free Consultation with Mudassar
           </h3>
           <p className="text-slate-600 dark:text-slate-300 mb-6">
-            Meet with our expert to craft a powerful digital strategy to attract high-value listings and qualified buyers in UAE.
+          Work directly with our real estate expert to craft a high-impact digital strategy designed to attract high-value listings and qualified buyers across the UAE.
           </p>
          
           <div className="flex items-center gap-4 mb-6">
@@ -587,12 +592,12 @@ export default function Home() {
             </div>
             <div>
               <p className="text-lg font-semibold text-slate-900 dark:text-white">Mudassar Nazir</p>
-              <p className="text-sm text-slate-500">Digital & Technology Strategist</p>
+              <p className="text-sm text-slate-500">Real Estate & Digital Strategist</p>
             </div>
           </div>
 
           <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-            Mudassar specializes in deploying AI automation and targeted digital campaigns to increase qualified real estate leads. He has helped regional firms transition to scalable digital systems, focusing on ROI and conversion optimization.
+          Mudassar specializes in leveraging AI automation and targeted digital campaigns to generate qualified real estate leads. He has helped regional agencies transition to scalable digital systems, with a sharp focus on ROI and conversion optimization.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -636,7 +641,7 @@ export default function Home() {
                 <div className="text-center mb-10 md:mb-12">
                   <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-3">Get a quote</h2>
                   <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base max-w-2xl mx-auto">
-                    We are here to help you get onboard with strong presence in the UAE market.
+                  Let’s begin generating high-quality leads for you and automating your entire workflow.
                   </p>
                 </div>
 
@@ -814,7 +819,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-slate-600 leading-relaxed text-base">
-              Empowering businesses with digital innovation and automation excellence across the UAE.
+            Empowering Real Estate Professionals  with digital innovation and automation excellence across the UAE.
             </p>
             {/* <div className="flex gap-3">
               {[
@@ -917,7 +922,7 @@ export default function Home() {
             </ul> */}
             <h3 className="text-slate-600 transition-colors font-medium"
                 >
-                 One Central - The Offices 4 - Dubai, UAE
+                 Office no 308, One Central - The Offices 4 - Dubai, UAE
                 </h3>
           </div>
 
