@@ -367,14 +367,14 @@ export default function Home() {
                   "/images/services/Cover 1.svg",
                 ].map((src, i) => (
                   <div key={i} className="relative h-40 w-[250px] md:h-80 md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
-                    <img 
+<Image 
   src={src} 
-  alt={`Marketing Showcase ${i+1}`}
-  className="w-full h-full object-cover"
-  loading={i < 2 ? "eager" : "lazy"}
-  // Add quality hints
-  width={500}  // Set actual width
-  height={320} // Set actual height
+  alt={`Marketing Showcase ${i+1}`} 
+  fill 
+  className="object-cover"
+  sizes="(max-width: 768px) 250px, 500px"
+  quality={90} // Increase quality
+  priority={i < 2} // Load first images with priority
 />
                   </div>
                 ))}
@@ -419,7 +419,15 @@ export default function Home() {
                   "/images/services/c4.svg",
                 ].map((src, i) => (
                   <div key={i} className="relative h-40 w-[250px] md:h-80 md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
-                    <img src={src} alt={`Marketing Showcase ${i+1}`}  className="object-cover" />
+                    <Image 
+  src={src} 
+  alt={`Marketing Showcase ${i+1}`} 
+  fill 
+  className="object-cover"
+  sizes="(max-width: 768px) 250px, 500px"
+  quality={90} // Increase quality
+  priority={i < 2} // Load first images with priority
+/>
                   </div>
                 ))}
               </div>
@@ -453,7 +461,15 @@ export default function Home() {
                 
                 ].map((src, i) => (
                   <div key={i} className="relative h-40 w-[250px] md:h-80 md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
-                    <img src={src} alt={`Automation Showcase ${i+1}`}  className="object-cover" />
+                    <Image 
+  src={src} 
+  alt={`Marketing Showcase ${i+1}`} 
+  fill 
+  className="object-cover"
+  sizes="(max-width: 768px) 250px, 500px"
+  quality={90} // Increase quality
+  priority={i < 2} // Load first images with priority
+/>
                   </div>
                 ))}
               </div>
@@ -491,7 +507,15 @@ export default function Home() {
 
                 ].map((src, i) => (
                   <div key={i} className="relative h-40 w-[250px] md:h-80 md:w-[500px] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-lg">
-                    <img src={src} alt={`Web Showcase ${i+1}`}  className="object-cover" />
+                    <Image 
+  src={src} 
+  alt={`Marketing Showcase ${i+1}`} 
+  fill 
+  className="object-cover"
+  sizes="(max-width: 768px) 250px, 500px"
+  quality={90} // Increase quality
+  priority={i < 2} // Load first images with priority
+/>
                   </div>
                 ))}
               </div>
