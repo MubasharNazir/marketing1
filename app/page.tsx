@@ -212,7 +212,7 @@ export default function Home() {
     <div className="flex justify-between items-center h-14 sm:h-16">
       <div className="flex items-center">
         <Image
-          src="/images/services/gaa-reale.svg"
+          src="/images/growthaccess-removebg-preview.png"
           alt="Company Logo"
           width={120}
           height={32}
@@ -348,7 +348,7 @@ export default function Home() {
         <section id="services-web" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/20 to-white dark:from-slate-900 dark:to-slate-950">
           <div className="max-w-7xl mx-auto">
           <h1 className="text-center text-2xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
-      <span className="text-emerald-600 dark:text-emerald-400">Website & </span>Landing Pages
+     Website & Landing Pages
     </h1>
     <p className="text-center text-sm md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto hidden md:block">
     High-converting websites and landing pages designed to showcase and sell real estate properties effectively.
@@ -395,7 +395,7 @@ export default function Home() {
         <section id="services-marketing" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50/20 dark:from-slate-950 dark:to-slate-900">
           <div className="max-w-7xl mx-auto">
           <h1 className="text-center text-2xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
-      <span className="text-emerald-600 dark:text-emerald-400">Lead generation</span> for Real estate
+          Lead generation for Real estate
     </h1>
     <p className="text-center text-sm md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto hidden md:block">
     Generate qualified leads and connect with potential buyers to boost your real estate sales.
@@ -439,7 +439,7 @@ export default function Home() {
         <section id="services-automation" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/20 to-white dark:from-slate-900 dark:to-slate-950">
           <div className="max-w-7xl mx-auto">
           <h1 className="text-center text-2xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
-      <span className="text-emerald-600 dark:text-emerald-400">CRM &</span> AI agents for Real estate
+          CRM & AI agents for Real estate
     </h1>
     <p className="text-center text-sm md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto hidden md:block">
     Automate client management and streamline real estate operations with intelligent CRM and AI agents.
@@ -481,7 +481,7 @@ export default function Home() {
         <section id="services-mobile" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/20 to-white dark:from-slate-900 dark:to-slate-950">
           <div className="max-w-7xl mx-auto">
           <h1 className="text-center text-2xl md:text-4xl font-bold text-slate-800 dark:text-emerald-300">
-      <span className="text-emerald-600 dark:text-emerald-400">Mobile</span> apps for Real estate
+          Mobile apps for Real estate
     </h1>
     <p className="text-center text-sm md:text-lg text-slate-600 dark:text-slate-400 mt-3 mb-10 max-w-3xl mx-auto hidden md:block">
     Custom mobile apps to showcase properties, engage clients, and simplify real estate transactions.
@@ -597,7 +597,7 @@ export default function Home() {
         <div className="relative h-64 md:h-full min-h-[400px]">
           <Image 
             src="/images/coffee.jpg" // <-- Placeholder for a relevant real estate image
-            alt="Real Estate Strategy Session" 
+            alt="Property" 
             fill 
             className="object-cover" 
           />
@@ -912,7 +912,7 @@ export default function Home() {
                   href="mailto:sales@growthaccess.ae" 
                   className="text-slate-600 hover:text-blue-600 transition-colors font-medium"
                 >
-                  sales@growthaccess.ae
+                 mubashar@growthaccess.ae
                 </a>
               </li>
               <li className="pt-2">
@@ -999,7 +999,12 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2">
               <div className="relative h-56 md:h-full">
-                <Image src="/images/coffee.jpg" alt="Coffee invitation" fill className="object-cover" />
+              <Image 
+  src={`/images/building.jpg?t=${new Date().getTime()}`} 
+  alt="Coffee invitation" 
+  fill 
+  className="object-cover" 
+/>
                 <div className="absolute bottom-3 left-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur px-3 py-1.5 rounded-lg text-xs text-slate-700 dark:text-slate-300 border border-slate-200/70 dark:border-slate-700">Let's grab a coffee ☕️</div>
               </div>
 
